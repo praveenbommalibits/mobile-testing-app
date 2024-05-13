@@ -24,18 +24,16 @@ public class MobileDataLoader implements ApplicationRunner {
     }
 
     @Override
-    public void run(ApplicationArguments args) throws Exception {
-        // Read data from the file and save it to the database
+    public void run(ApplicationArguments args) {
         Resource resource = resourceLoader.getResource("classpath:mobile_data.txt");
         try (Stream<String> lines = Files.lines(Paths.get(resource.getURI()))) {
             lines.forEach(model -> {
                 Phone phone = new Phone();
                 phone.setModel(model);
-                phone.setAvailability(true); // Assume all phones are initially available
+                phone.setAvailability(true);
                 phoneRepository.save(phone);
             });
         } catch (IOException e) {
-            // Handle file reading error
             e.printStackTrace();
         }
     }

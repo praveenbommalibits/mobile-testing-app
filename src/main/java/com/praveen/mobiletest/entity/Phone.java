@@ -22,5 +22,4 @@ public class Phone {
     private String bookedBy;
     private LocalDateTime bookingDate;
 
-    // Constructors, getters, setters, and other methods
 }
