@@ -2,7 +2,6 @@ package com.praveen.mobiletest.service;
 
 import com.praveen.mobiletest.PhoneRepository;
 import com.praveen.mobiletest.entity.Phone;
-import com.praveen.mobiletest.service.PhoneService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;

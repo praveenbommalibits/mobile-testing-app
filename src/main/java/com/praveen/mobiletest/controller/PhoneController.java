@@ -22,7 +22,6 @@ public class PhoneController {
 
     @PostMapping("/book/{phoneId}")
     public Phone bookPhone(@PathVariable Long phoneId, @RequestParam(value = "bookedBy" , required = false) String bookedBy) {
-        System.out.println(bookedBy);
         return phoneService.bookPhone(phoneId, bookedBy);
     }
 
