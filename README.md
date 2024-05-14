@@ -11,8 +11,8 @@ This README provides essential information for setting up, deploying, and runnin
 5. Deployment
 6. Running the Application
 7. API Documentation
-8. Contributing
-9. License
+8. UML Diagrams
+9. Reflection
 
 ## Introduction
 
@@ -25,6 +25,8 @@ Before you begin, ensure you have the following installed:
 
 - Java 17
 - Maven 3.x
+- github & github actions
+- Azure 
 
 ## Clone & Build
 
@@ -81,7 +83,7 @@ Before you begin, ensure you have the following installed:
 
 
 
-## Diagrams
+## UML Diagrams
 Class Diagram:
 
 https://www.plantuml.com/plantuml/uml/SyfFKj2rKt3CoKnELR1Io4ZDoSa70000
@@ -100,6 +102,25 @@ https://www.plantuml.com/plantuml/uml/SyfFKj2rKt3CoKnELR1Io4ZDoSa70000
 
 
 ![img.png](img.png)
+
+
+## Reflection: 
+### Most Interesting Aspect:
+- **Application Architecture Design**: Delving into the intricacies of software design and crafting the application
+architecture from scratch was truly fascinating. From conceptualizing the entity model to defining the interactions between different layers, it was a stimulating exercise in applying best practices and design patterns.
+- **Business Logic Implementation**: Implementing the business logic for booking and returning phones provided an engaging challenge. It involved considering various scenarios, such as concurrency handling, transaction management, and input validation, which added depth to the development process.
+- **Production Readiness and CI/CD Enablement**: Integrating production readiness and CI/CD enablement into the development process was particularly intriguing. Leveraging GitHub Actions for continuous integration and continuous deployment (CI/CD) and deploying the application to Azure showcased a commitment to industry best practices and demonstrated proficiency in modern software development workflows.
+- **End-to-End Application Development**: Being involved in the entire lifecycle of application development, from inception to deployment, was incredibly rewarding. It allowed for a holistic understanding of the project requirements, fostering a sense of ownership and accountability for delivering a high-quality solution.
+
+### Most Cumbersome Aspect:
+- **Setup and Configuration Challenges**:
+  Setting up the development environment, configuring dependencies, and conducting integration testing demanded meticulous attention to detail. 
+  Debugging issues related to dependencies, configuration errors, or unexpected behavior in the application required patience and perseverance. 
+  Integrating and testing with external services or databases, such as the H2 database, added complexity. Ensuring seamless deployment to Azure while meeting production standards was challenging but ultimately contributed to a more robust final product.
+
+- **Data Simulation for Testing**:
+  Simulating the existing mobile data by loading and enabling availability is cumbersome, not realistic, and not viable for a production setup. 
+  Finding a more efficient and realistic approach to generate or mock test data would streamline the testing process and enhance the reliability of the application.
 
 
 

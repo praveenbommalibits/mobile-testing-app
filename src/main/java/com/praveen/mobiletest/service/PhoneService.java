@@ -2,7 +2,11 @@ package com.praveen.mobiletest.service;
 
 import com.praveen.mobiletest.PhoneRepository;
 import com.praveen.mobiletest.entity.Phone;
+import org.springframework.dao.OptimisticLockingFailureException;
+import org.springframework.retry.annotation.Backoff;
+import org.springframework.retry.annotation.Retryable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -15,10 +19,8 @@ public class PhoneService {
         this.phoneRepository = phoneRepository;
     }
 
-    public List<Phone> getAllPhones() {
-        return phoneRepository.findAll();
-    }
-
+    @Retryable(value = {OptimisticLockingFailureException.class}, maxAttempts = 3, backoff = @Backoff(delay = 100))
+    @Transactional
     public Phone bookPhone(Long phoneId, String bookedBy) {
         Phone phone = phoneRepository.findById(phoneId)
                 .orElseThrow(() -> new IllegalArgumentException("Phone not found"));
@@ -31,9 +33,15 @@ public class PhoneService {
         phone.setBookedBy(bookedBy);
         phone.setBookingDate(LocalDateTime.now());
 
-        return phoneRepository.save(phone);
+        try {
+            return phoneRepository.save(phone);
+        } catch (OptimisticLockingFailureException ex) {
+            throw ex;
+        }
     }
 
+    @Retryable(value = {OptimisticLockingFailureException.class}, maxAttempts = 3, backoff = @Backoff(delay = 100))
+    @Transactional
     public Phone returnPhone(Long phoneId) {
         Phone phone = phoneRepository.findById(phoneId)
                 .orElseThrow(() -> new IllegalArgumentException("Phone not found"));
@@ -46,7 +54,17 @@ public class PhoneService {
         phone.setBookedBy(null);
         phone.setBookingDate(null);
 
-        return phoneRepository.save(phone);
+        try {
+            return phoneRepository.save(phone);
+        } catch (OptimisticLockingFailureException ex) {
+            throw ex;
+        }
+    }
+
+
+
+    @Transactional(readOnly = true)
+    public List<Phone> getAllPhones() {
+        return phoneRepository.findAll();
     }
 }
-
