@@ -6,7 +6,7 @@ This README provides essential information for setting up, deploying, and runnin
 
 1. Introduction
 2. Prerequisites
-3. Installation
+3. Clone & Building
 4. Configuration
 5. Deployment
 6. Running the Application
@@ -26,7 +26,7 @@ Before you begin, ensure you have the following installed:
 - Java 17
 - Maven 3.x
 
-## Installation
+## Clone & Build
 
 1. Clone this repository:
 
@@ -50,6 +50,7 @@ Before you begin, ensure you have the following installed:
 ## Deployment
 
 1. Deploy the application to Azure or local environment
+2. Creation of deploy.yml file deploy application to Azure using github Actions CI/CD pipeline.
 
 ## Running the Application
 
@@ -77,9 +78,31 @@ Before you begin, ensure you have the following installed:
 - Example: `curl -X POST "http://localhost:8080/api/phones/return/1"`
 
 
-## License
 
-This project is licensed under the MIT License.
+
+
+## Diagrams
+Class Diagram:
+
+https://www.plantuml.com/plantuml/uml/SyfFKj2rKt3CoKnELR1Io4ZDoSa70000
+
+(https://cdn-0.plantuml.com/plantuml/png/LSun2W9130NGVaxnU_42MorYQI7e1R8xOGrcPc0IXKMykqPjx5v-GlYZENM_5KspaXcEbrOPZmHi8Nd0eTNbCvIMMGUSlCileJk9qYGglWwOMbEc6flmbVDk_JkFyEqzESVRcJHubi89s61XT-u6gXdsTNgcaMkESYy0)
+
+![img_1.png](img_1.png)
+
+
+Sequential Diagram:
+
+https://www.plantuml.com/plantuml/uml/SyfFKj2rKt3CoKnELR1Io4ZDoSa70000
+
+(https://cdn-0.plantuml.com/plantuml/png/XL9DIyGm4BttLmmzAIXTFVOWYmlYuc6BswENs8nii4v2CbjOnFzkqwOaMwfxwanv7-ynMJiMbezVRIOQrXOshKBYpFG_LQEC88QyEcZ2ZIQskctHvY0Sn7K1kqVRgGO7O9WNKAzej5EzwMa0nZNBnXHm-v3ub53jzZKKmgZ2UBuhthN-BExUw3lt4yh7KrxsubPqY9J_-4gg4unfsZXw-P2k12ymfBeQjBVo1YRDwwWpbGbVhn1Zb_2XgCTlvQGHcMcxECxvJyZD0GOoI6IXMdU6JWDNPoY9Iqv_n7IY2pN_3xXiwTdoak7iSXRvQ6bibb83VdQKyVebFDTrrQixeyaXtAzMi7j9sP6LhP6aVyI_)
+
+
+
+![img.png](img.png)
+
+
+
 
 
 
